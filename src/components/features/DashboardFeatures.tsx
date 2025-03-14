@@ -25,7 +25,8 @@ import {
   ListPlus,
   Users,
   LineChart,
-  PieChart
+  PieChart,
+  ArrowRight
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
