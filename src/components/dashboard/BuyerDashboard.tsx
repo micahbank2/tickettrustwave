@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,9 +7,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import TrustScore from "@/components/ui/TrustScore";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Search, Filter, Ticket, Calendar, MapPin, DollarSign, ThumbsUp, Clock, CheckCircle, AlertCircle } from "lucide-react";
+import { Search, Filter, Ticket, Calendar, MapPin, DollarSign, ThumbsUp, Clock, CheckCircle, AlertCircle, HelpCircle } from "lucide-react";
 
-// Mock data for the dashboard
 const recentTransactions = [
   { 
     id: 1, 
