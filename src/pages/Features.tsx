@@ -2,7 +2,9 @@
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import Features from "@/components/home/Features";
+import DashboardFeatures from "@/components/features/DashboardFeatures";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const FeaturesPage = () => {
   return (
@@ -21,7 +23,7 @@ const FeaturesPage = () => {
           </div>
         </div>
         
-        <Features />
+        <DashboardFeatures />
       </div>
       <Footer />
     </>
