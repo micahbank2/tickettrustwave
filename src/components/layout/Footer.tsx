@@ -29,7 +29,7 @@ const Footer = () => {
                   strokeLinejoin="round" 
                 />
               </svg>
-              <span>TicketTrustWave</span>
+              <span>SeatHaven</span>
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
               The safest way to complete peer-to-peer ticket sales with secure escrow, 
@@ -131,7 +131,7 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <Mail size={18} className="text-primary flex-shrink-0" />
                 <span className="text-muted-foreground">
-                  support@tickettrustwave.com
+                  support@seathaven.com
                 </span>
               </li>
             </ul>
@@ -140,7 +140,7 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-          <p>© {currentYear} TicketTrustWave. All rights reserved.</p>
+          <p>© {currentYear} SeatHaven. All rights reserved.</p>
           <p className="mt-2 md:mt-0">Designed and developed with security in mind</p>
         </div>
       </div>

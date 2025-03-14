@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -13,15 +14,15 @@ const FAQ = () => {
       category: "General",
       questions: [
         {
-          question: "What is TicketTrustWave?",
-          answer: "TicketTrustWave is a secure peer-to-peer ticket exchange platform that uses escrow services, AI fraud detection, and trust scores to ensure safe transactions between buyers and sellers."
+          question: "What is SeatHaven?",
+          answer: "SeatHaven is a secure peer-to-peer ticket exchange platform that uses escrow services, AI fraud detection, and trust scores to ensure safe transactions between buyers and sellers."
         },
         {
-          question: "How is TicketTrustWave different from other ticket marketplaces?",
+          question: "How is SeatHaven different from other ticket marketplaces?",
           answer: "Unlike other platforms, we focus on security first with our triple-layer protection: secure escrow holds funds until both parties confirm the transaction is complete, AI technology scans for potential fraud, and our Trust Score system helps you identify reliable sellers."
         },
         {
-          question: "Is TicketTrustWave available internationally?",
+          question: "Is SeatHaven available internationally?",
           answer: "Currently, we operate in select countries with plans for international expansion. Please check our supported regions in your account settings."
         }
       ]

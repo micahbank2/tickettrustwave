@@ -90,7 +90,7 @@ const About = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">Our Story</h2>
             <BlurCard className="p-8">
               <p className="text-muted-foreground mb-4">
-                TicketTrustWave was born from a painful personal experience. In 2019, our founders were victims of ticket 
+                SeatHaven was born from a painful personal experience. In 2019, our founders were victims of ticket 
                 fraud that cost them thousands of dollars and ruined what should have been a memorable concert experience.
               </p>
               <p className="text-muted-foreground mb-4">
@@ -99,7 +99,7 @@ const About = () => {
                 puts trust and protection at the center of every transaction.
               </p>
               <p className="text-muted-foreground">
-                Today, TicketTrustWave has protected thousands of transactions worth millions of dollars, using 
+                Today, SeatHaven has protected thousands of transactions worth millions of dollars, using 
                 innovative technology to make peer-to-peer ticket sales safe for everyone.
               </p>
             </BlurCard>

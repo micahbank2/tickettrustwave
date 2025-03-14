@@ -100,7 +100,7 @@ const HowItWorks = () => {
         <div className="bg-secondary/50 py-16 md:py-24">
           <div className="layout-grid text-center">
             <h1 className="text-3xl md:text-5xl font-bold mb-6 animate-fade-in text-balance">
-              How <span className="title-gradient">TicketTrustWave</span> Works
+              How <span className="title-gradient">SeatHaven</span> Works
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in text-balance">
               Our innovative platform combines cutting-edge technology with user-centered design to create the safest ticket exchange experience possible.

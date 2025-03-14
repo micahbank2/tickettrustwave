@@ -66,7 +66,7 @@ const Navbar = () => {
               strokeLinejoin="round" 
             />
           </svg>
-          <span className="hidden sm:block">TicketTrustWave</span>
+          <span className="hidden sm:block">SeatHaven</span>
         </Link>
 
         {/* Desktop navigation */}
