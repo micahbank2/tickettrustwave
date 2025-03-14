@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -72,8 +71,8 @@ const Contact = () => {
                     <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="font-medium">Email Us</p>
-                      <a href="mailto:support@tickettrustwave.com" className="text-muted-foreground hover:text-primary text-sm">
-                        support@tickettrustwave.com
+                      <a href="mailto:support@seathaven.com" className="text-muted-foreground hover:text-primary text-sm">
+                        support@seathaven.com
                       </a>
                     </div>
                   </div>
