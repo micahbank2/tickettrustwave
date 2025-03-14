@@ -1,11 +1,13 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Shield, ShieldCheck, ShieldAlert } from "lucide-react";
+import { Shield, ShieldCheck, ShieldAlert, Info } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface TrustScoreProps {
   score: number;
   showText?: boolean;
+  showTooltip?: boolean;
   size?: "sm" | "md" | "lg";
   className?: string;
 }
@@ -13,6 +15,7 @@ interface TrustScoreProps {
 const TrustScore = ({
   score,
   showText = true,
+  showTooltip = false,
   size = "md",
   className,
 }: TrustScoreProps) => {
@@ -39,7 +42,18 @@ const TrustScore = ({
     trustLevel === "medium" ? Shield :
     ShieldAlert;
 
-  return (
+  // Trust score explanation
+  const getTrustExplanation = () => {
+    if (trustLevel === "high") {
+      return "This seller has an excellent trust score based on verified transactions, positive reviews, and platform behavior.";
+    } else if (trustLevel === "medium") {
+      return "This seller has a good trust score with some verified transactions and mostly positive reviews.";
+    } else {
+      return "This seller has a low trust score or is new to the platform. Exercise caution when transacting.";
+    }
+  };
+
+  const trustComponent = (
     <div 
       className={cn(
         "flex items-center font-medium",
@@ -62,6 +76,26 @@ const TrustScore = ({
       )}
     </div>
   );
+
+  if (showTooltip) {
+    return (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div className="flex items-center gap-1 cursor-help">
+              {trustComponent}
+              <Info size={iconSize[size] - 4} className="text-muted-foreground" />
+            </div>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p className="max-w-xs">{getTrustExplanation()}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
+    );
+  }
+
+  return trustComponent;
 };
 
 export default TrustScore;
