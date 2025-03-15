@@ -137,6 +137,18 @@
   .layout-grid {
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+  
+  /* Loading dots animation */
+  .loading-dots::after {
+    content: '';
+    animation: dots 1.5s infinite;
+  }
+  
+  @keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+  }
 }
 
 /* Global animations */

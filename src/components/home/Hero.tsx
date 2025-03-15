@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, ShieldCheck, Lock } from "lucide-react";
+import { ArrowRight, Shield, ShieldCheck, Lock, CheckCircle, Scan } from "lucide-react";
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -52,64 +52,92 @@ const Hero = () => {
       </div>
 
       <div className="layout-grid relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <span className="inline-flex items-center px-3 py-1 mb-6 rounded-full bg-primary/10 text-primary text-sm font-medium animate-fade-in">
-            Secure Peer-to-Peer Ticket Exchange
-          </span>
-          
-          <h1 
-            ref={heroRef}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in text-balance"
-          >
-            The Safest Way to Complete
-            <span className="title-gradient ml-2">Peer-to-Peer Ticket Sales</span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl animate-fade-in text-balance">
-            Secure Escrow, AI Fraud Detection, and Trust Scores—All in One Platform. Enjoy peace of mind with every transaction.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
-            <Button size="lg" asChild>
-              <Link to="/auth?mode=signup">
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link to="/how-it-works">Learn How It Works</Link>
-            </Button>
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-1 text-center md:text-left">
+            <span className="inline-flex items-center px-3 py-1 mb-6 rounded-full bg-primary/10 text-primary text-sm font-medium animate-fade-in">
+              Secure Peer-to-Peer Ticket Exchange
+            </span>
+            
+            <h1 
+              ref={heroRef}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in text-balance"
+            >
+              Buy Tickets with 
+              <span className="title-gradient ml-2">Confidence – Verified & Secure</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl animate-fade-in text-balance">
+              Get your tickets verified for safety before you buy. No more scams, no more worries.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in">
+              <Button size="lg" asChild>
+                <Link to="/ticket-verification">
+                  Check Your Ticket's Safety
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link to="/how-it-works">Learn How It Works</Link>
+              </Button>
+            </div>
+            
+            {/* Trust indicators */}
+            <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-12 text-muted-foreground animate-fade-in">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="text-primary" size={20} />
+                <span>100% Secure Escrow</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Scan className="text-primary" size={20} />
+                <span>AI Fraud Detection</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="text-primary" size={20} />
+                <span>Verified Tickets</span>
+              </div>
+            </div>
           </div>
           
-          {/* Trust indicators */}
-          <div className="flex flex-wrap justify-center gap-6 mt-12 text-muted-foreground animate-fade-in">
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="text-primary" size={20} />
-              <span>100% Secure Escrow</span>
+          {/* Hero image */}
+          <div className="flex-1 hidden md:block">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-primary/5 rounded-3xl -z-10"></div>
+              <img 
+                src="/assets/ticket-purchase.svg" 
+                alt="Person buying tickets safely online" 
+                className="w-full h-auto object-cover rounded-xl"
+              />
             </div>
-            <div className="flex items-center gap-2">
-              <svg 
-                width="20" 
-                height="20" 
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-primary"
-              >
-                <path d="M12 2a10 10 0 1 0 10 10H12V2z" />
-                <path d="M20 12a8 8 0 1 0-16 0" />
-                <path d="M12 12v-2" />
-                <path d="M12 12h2" />
-              </svg>
-              <span>AI Fraud Detection</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Lock className="text-primary" size={20} />
-              <span>Trusted by Thousands</span>
-            </div>
+          </div>
+        </div>
+
+        {/* Safety Process - Visual Steps */}
+        <div className="mt-16 pt-8 border-t border-border/50">
+          <h2 className="text-2xl font-semibold text-center mb-8">How Our Safe Ticket Exchange Works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 text-center">
+            {[
+              { step: 1, title: "Ticket Purchase", icon: Scan },
+              { step: 2, title: "Verification", icon: CheckCircle },
+              { step: 3, title: "Fraud Detection", icon: Shield },
+              { step: 4, title: "Payment Protection", icon: Lock },
+              { step: 5, title: "Safe Transaction", icon: ShieldCheck }
+            ].map((item, index) => (
+              <div key={index} className="flex flex-col items-center p-4 relative">
+                <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <item.icon className="h-7 w-7 text-primary" />
+                </div>
+                <div className="font-medium">{item.title}</div>
+                <div className="text-sm text-muted-foreground mt-1">Step {item.step}</div>
+                
+                {/* Connector line */}
+                {index < 4 && (
+                  <div className="hidden md:block absolute top-[32px] left-[calc(50%+40px)] w-[calc(100%-80px)] h-[2px] bg-border">
+                    <div className="absolute right-0 top-[-4px] w-3 h-3 border-t-2 border-r-2 border-border rotate-45"></div>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
