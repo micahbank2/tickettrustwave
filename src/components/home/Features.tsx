@@ -1,62 +1,102 @@
 
 import React from "react";
-import BlurCard from "@/components/ui/BlurCard";
-import { Shield, Zap, BarChart3, CreditCard } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Shield, Zap, BarChart3, CreditCard, CheckCircle, Lock, Wallet, Users, AlertTriangle, Search } from "lucide-react";
 
 const Features = () => {
   const features = [
     {
-      title: "Secure Escrow Service",
-      description: "Our escrow system holds funds securely until both parties confirm the transaction is complete, eliminating the risk of fraud.",
+      title: "Secure Escrow",
+      description: "Funds held securely until transaction completion",
       icon: Shield,
-      delay: 0,
+      color: "bg-[#2c4e6c]/10 text-[#2c4e6c]",
     },
     {
       title: "AI Fraud Detection",
-      description: "Advanced AI algorithms scan tickets and listings in real-time to identify potential fraud before it affects you.",
+      description: "Advanced algorithms scan tickets for authenticity",
       icon: Zap,
-      delay: 150,
+      color: "bg-[#3b304e]/10 text-[#3b304e]",
     },
     {
-      title: "Trust Score System",
-      description: "Every seller has a transparent Trust Score based on verified transaction history, reviews, and platform behavior.",
+      title: "Trust Scores",
+      description: "Transparent reliability ratings for all users",
       icon: BarChart3,
-      delay: 300,
+      color: "bg-[#5f2d59]/10 text-[#5f2d59]",
     },
     {
-      title: "Seamless Transactions",
-      description: "Our intuitive platform makes buying and selling tickets safe, easy, and stress-free with multiple payment options.",
+      title: "Secure Payments",
+      description: "Multiple protected payment options",
       icon: CreditCard,
-      delay: 450,
+      color: "bg-[#25dc88]/10 text-[#25dc88]",
+    },
+    {
+      title: "Verification System",
+      description: "Multi-step verification for all tickets",
+      icon: CheckCircle,
+      color: "bg-[#2c4e6c]/10 text-[#2c4e6c]",
+    },
+    {
+      title: "Encrypted Data",
+      description: "End-to-end encryption for all transactions",
+      icon: Lock,
+      color: "bg-[#3b304e]/10 text-[#3b304e]",
+    },
+    {
+      title: "Instant Transfers",
+      description: "Fast payouts when transactions complete",
+      icon: Wallet,
+      color: "bg-[#5f2d59]/10 text-[#5f2d59]",
+    },
+    {
+      title: "Seller Verification",
+      description: "Identity checks on all platform sellers",
+      icon: Users,
+      color: "bg-[#25dc88]/10 text-[#25dc88]",
+    },
+    {
+      title: "Risk Analysis",
+      description: "Proactive detection of suspicious activity",
+      icon: AlertTriangle,
+      color: "bg-[#2c4e6c]/10 text-[#2c4e6c]",
+    },
+    {
+      title: "Transparent History",
+      description: "Complete transaction audit trails",
+      icon: Search,
+      color: "bg-[#3b304e]/10 text-[#3b304e]",
     },
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="layout-grid">
-        <div className="text-center mb-12">
+    <section className="py-20 bg-[#17232d] relative">
+      {/* Background pattern */}
+      <div className="absolute inset-0 z-0 opacity-5 bg-grid-pattern bg-[length:20px_20px]"></div>
+      
+      <div className="layout-grid relative z-10">
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Features That <span className="title-gradient">Protect You</span>
+            Monitor Your <span className="text-primary">Full Transaction</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-balance">
-            Our platform combines cutting-edge technology with user-centered design to create the safest ticket exchange experience possible.
+            Our platform combines advanced security features to protect every aspect of your ticket exchange.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {features.map((feature, index) => (
-            <BlurCard 
+            <div 
               key={index} 
-              className="flex flex-col items-center text-center p-6" 
-              animateIn 
-              delay={feature.delay}
+              className="group flex flex-col items-center text-center transition-all"
             >
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <feature.icon className="h-6 w-6 text-primary" />
+              <div className={cn(
+                "hexagon w-16 h-16 flex items-center justify-center mb-4 transition-all group-hover:scale-110",
+                feature.color
+              )}>
+                <feature.icon className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground text-sm">{feature.description}</p>
-            </BlurCard>
+              <h3 className="text-base font-semibold mb-1">{feature.title}</h3>
+              <p className="text-xs text-muted-foreground">{feature.description}</p>
+            </div>
           ))}
         </div>
       </div>
